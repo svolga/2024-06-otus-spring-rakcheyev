@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Список книг</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <script src="https://unpkg.com/can-ndjson-stream@0.1.6/dist/global/can-ndjson-stream.js"></script>
+    <script th:src="@{/js/script.js}" type="text/javascript"></script>
+</head>
+
+<body onload="showBooks()">
+
+<h3>Книги</h3>
+
+<div class="navigation">
+    <a th:href="@{/}" href="index.html">Главная</a> |
+    <a th:href="@{/book/create}" href="book/create.html">Создать книгу</a>
+
+    <h4>Справочники</h4>
+    <div>
+        <a th:href="@{/author}" href="views/author/index.html">Авторы</a>
+    </div>
+
+    <div>
+        <a th:href="@{/genre}" href="views/genre/index.html">Жанры</a>
+    </div>
+
+</div>
+
+<table class="items">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th>Жанры</th>
+        <th>Автор</th>
+        <th colspan="2">Действие</th>
+    </tr>
+    </thead>
+    <tbody id="table-items">
+    </tbody>
+</table>
+
+
+<footer th:insert="~{views/fragment/footer}"></footer>
+
+</body>
+
+</html>

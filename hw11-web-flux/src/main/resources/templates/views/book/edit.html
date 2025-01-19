@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${id == 0} ? 'Создать книгу' : 'Изменить книгу'"> Книга</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+    <script src="https://unpkg.com/can-ndjson-stream@0.1.6/dist/global/can-ndjson-stream.js"></script>
+    <script th:src="@{/js/script.js}" type="text/javascript"></script>
+</head>
+
+<body>
+
+<form id="edit-form" action="views/book/edit.html" th:method="post">
+
+    <h3 th:text="${id == 0} ? 'Создать книгу' : 'Изменить книгу'">Book Info:</h3>
+
+    <div class="errors" id="errorId"></div>
+
+    <div class="row">
+        <label for="id-input">ID:</label>
+        <input id="id-input" type="text" readonly="readonly" name="id" th:value="${id}"/>
+    </div>
+
+    <div class="row">
+        <label for="book-name-input">Название:</label>
+        <input id="book-name-input" name="title" type="text" value="New book"/>
+        </div>
+    </div>
+
+    <div class="row">
+        <label for="authorId">Автор*:</label>
+        <select id="authorId" name="authorId">
+            <option th:value="0" th:disabled="disabled" label="-- Выберите автора --" th:selected="selected"></option>
+        </select>
+    </div>
+
+    <div class="row">
+        <label for="genreId">Жанры* :</label>
+        <select size="10" name="genreId" id="genreId" multiple>
+            <option th:value="0" th:disabled="disabled" label="-- Выберите жанр --" th:selected="selected"></option>
+        </select>
+    </div>
+
+    <div class="row">
+        <button type="button" onclick="saveBook()">Сохранить</button>
+        <a href="views/book/index.html" th:href="@{/}"><button type="button">Отменить</button></a>
+    </div>
+</form>
+
+<script>
+    loadBook();
+</script>
+
+<footer th:insert="~{views/fragment/footer}"></footer>
+</body>
+</html>

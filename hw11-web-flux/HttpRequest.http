@@ -1,0 +1,76 @@
+################### Авторы ####################
+### GET authors
+GET http://localhost:8080/api/v1/author
+Accept: application/json
+
+### GET author
+GET http://localhost:8080/api/v1/author/3
+Accept: application/json
+
+### POST author
+POST http://localhost:8080/api/v1/author
+Accept: application/json, text/plain
+Content-Type: application/json
+
+{
+  "fullName": "Author_2222222222222222"
+}
+
+### PUT author
+PUT http://localhost:8080/api/v1/author
+Accept: application/json, text/plain
+Content-Type: application/json
+
+{
+  "id":"1",
+  "fullName": "Author_NEW"
+}
+
+### PUT Unknown author
+PUT http://localhost:8080/api/v1/author
+Accept: application/json, text/plain
+Content-Type: application/json
+
+{
+  "id":"1000",
+  "fullName": "Author_NEW__"
+}
+
+################### Жанры ####################
+### GET genres
+GET http://localhost:8080/api/v1/genre
+Accept: application/json
+
+### GET genre
+GET http://localhost:8080/api/v1/genre/3
+Accept: application/json
+
+### POST genre
+POST http://localhost:8080/api/v1/genre
+Accept: application/json, text/plain
+Content-Type: application/json
+
+{
+  "name": "Genre 111111111111"
+}
+
+### PUT genre
+PUT http://localhost:8080/api/v1/genre
+Accept: application/json, text/plain
+Content-Type: application/json
+
+{
+  "id":"1",
+  "name": "Genre .... NEW"
+}
+
+### PUT Unknown genre
+PUT http://localhost:8080/api/v1/genre
+Accept: application/json, text/plain
+Content-Type: application/json
+
+{
+  "id":"1000",
+  "name": "Genre ... NEW"
+}
+

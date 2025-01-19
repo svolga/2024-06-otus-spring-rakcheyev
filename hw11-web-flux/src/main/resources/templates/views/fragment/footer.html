@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<body>
+<hr>
+<div th:fragment="copy">
+    ©Otus, hw11-web-flux <span th:value="${#dates.format(#dates.createNow() , 'dd.mm.yyyy')}"></span>
+</div>
+</body>
+</html>

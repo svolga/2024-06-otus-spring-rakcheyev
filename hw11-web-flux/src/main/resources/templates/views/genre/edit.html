@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${id} ? 'Изменить жанр' : 'Создать жанр'" >Жанр</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <script src="https://unpkg.com/can-ndjson-stream@0.1.6/dist/global/can-ndjson-stream.js"></script>
+    <script th:src="@{/js/script.js}" type="text/javascript"></script>
+</head>
+
+<body onload="loadGenre()">
+
+<form id="edit-form" action="views/genre/edit.html" th:method="post">
+
+    <h3>Жанр</h3>
+
+    <div class="row">
+        <label for="id-input">ID:</label>
+        <input id="id-input" type="text" readonly="readonly" name="id" th:value="*{id}" value="1"/>
+    </div>
+
+    <div class="row">
+        <label for="genre-name-input">Название:</label>
+        <input id="genre-name-input" name="name" type="text" value="New Genre"/>
+    </div>
+
+    <div class="row">
+        <button type="button" onclick="saveGenre()">Сохранить</button>
+        <a href="views/genre/index.html" th:href="@{/genre}">
+            <button type="button">Отменить</button>
+        </a>
+    </div>
+</form>
+
+<footer th:insert="~{views/fragment/footer}"></footer>
+</body>
+</html>

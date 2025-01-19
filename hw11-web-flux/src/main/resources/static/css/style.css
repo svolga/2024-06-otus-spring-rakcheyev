@@ -1,0 +1,91 @@
+body {
+    padding: 50px;
+    font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono
+}
+
+.items {
+    border: 1px solid steelblue;
+    width: 300px;
+    border-collapse: collapse;
+}
+
+.items tr td, th {
+    padding: 5px;
+    border: 1px solid steelblue;
+}
+
+.items td:last-child, td:first-child {
+    width: 50px;
+}
+
+h3 {
+    background-image: url("../listmark.png");
+    background-repeat: no-repeat;
+    padding: 2px;
+    padding-left: 30px;
+}
+
+
+label {
+    display: inline-block;
+    width: 100px;
+    vertical-align: top;
+}
+
+input:read-only {
+    background: lightgray;
+}
+
+input {
+    width: 300px;
+    font-size: 0.9rem;
+    padding: 2px 5px;
+}
+
+
+.row {
+    margin-top: 10px;
+    vertical-align: top;
+}
+
+select {
+    font-size: 0.9rem;
+    padding: 2px 5px;
+    width: 300px;
+}
+
+.errors {
+    color: red;
+}
+
+.navigation {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+button {
+    overflow: visible;
+    width: auto;
+}
+
+button.link {
+    text-align: left;
+    font-size: 0.9rem;
+    color: blue;
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    -moz-user-select: text;
+}
+
+button.link:hover,
+button.link:focus {
+    color: black;
+}
+
+footer {
+    margin-top: 150px;
+}

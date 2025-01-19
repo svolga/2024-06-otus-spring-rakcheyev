@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Список авторов</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <script src="https://unpkg.com/can-ndjson-stream@0.1.6/dist/global/can-ndjson-stream.js"></script>
+    <script th:src="@{/js/script.js}" type="text/javascript"></script>
+</head>
+
+<body onload="showAuthors()">
+
+<h3>Авторы</h3>
+
+<div class="navigation">
+    <a th:href="@{/}" href="index.html">Главная</a> |
+    <a th:href="@{/author/create}" href="view/author/edit.html">Создать автора</a>
+</div>
+
+<table class="items">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th colspan="2">Действие</th>
+    </tr>
+    </thead>
+    <tbody id="table-items">
+    </tbody>
+</table>
+
+<footer th:insert="~{views/fragment/footer}"></footer>
+
+</body>
+</html>

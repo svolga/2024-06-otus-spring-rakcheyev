@@ -39,3 +39,6 @@ CRUD приложение с Web UI и хранением данных в БД
 
 # hw10
 Переписать приложение с использованием AJAX и REST-контроллеров
+
+# hw11
+Разрабатывать Responsive и Resilent приложения на реактивном стеке Spring c помощью Spring Web Flux и Reactive Spring
